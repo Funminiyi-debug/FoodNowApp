@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<title>Sigin</title>
+
+	<style>
+		body {
+			display: grid;
+			grid-template-areas: 
+					"header"
+					"content"
+					;
+		}
+		.myheader {
+			grid-area: "header"
+		}
+
+		.myforms {
+			margin-top: 3.5rem;
+			grid-area: "content"
+		}
+
+		.buttons{
+			display: none;
+		}
+
+		.tab-content {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.form-control {
+			border-radius: 0;
+		}
+
+
+		/* ============ CONTENT FOR LARGE SCREEN SIZE */
+		.content-tab{
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: 1fr;
+			grid-gap: 5rem;
+			align-items: stretch;
+		}
+
+		.menu1 {
+			display: block;
+		}
+		.menu2 {
+			display: block;
+		}
+		/* =========== THE END OF LARGE SCREEN SIZE */
+		
+		
+			/* ============== MEDIA QUERIES */
+		@media(max-width: 767px){
+		.buttons{
+			display: grid;
+			width: 100%;
+			grid-template-columns: repeat(12, 1fr);
+			grid-template-rows: 1fr;
+			/* align-items: center; */
+			grid-gap: 5px;
+			
+		} 
+
+		#signinbutton{
+			grid-column: 1/7;
+			border-radius: 0;
+		} 
+		
+		#registerbutton {
+			grid-column: 7/13;
+			border-radius: 0;
+		}
+
+		.content-tab {
+			display: block;
+		}
+		.menu1{
+			grid-area: "register";
+			display: none;
+			/* border: 1px solid black; */
+		}
+	}
+	</style>
+</head>
+<body>
+	<div class="myheader">
+			
+		<nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
+			<a href="index.html" class="navbar-brand">FoodNowApp</a>
+
+			<button class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		</nav>
+
+	</div>
+	
+
+<div class="myforms">
+	<div class="buttons nav">
+			<a data-toggle="tab" href="#menu1" class="btn btn-success btn-lg " id="signinbutton">SIGN IN</a>
+			<a data-toggle="tab" href="#menu2" class="btn btn-success btn-lg " id="registerbutton">REGISTER</a>
+	</div>
+
+	<div class="content-tab py-4 container" id="content">
+	  
+	  <div id="menu2" class="menu2 card">
+	    <h3 class="card-header white-text py-4 bg-info">REGISTER</h3>
+		
+		<div class="card-body px-lg-5 pt-0">
+			<form action="/action_page.php" class="py-4">
+				<div class="md-form form-group">
+						<label for="firstname">First Name</label>
+						<input type="text" class="form-control form-control-lg" id="firstname" placeholder="name">
+				</div>
+				<div class="form-group">
+					<label for="lastname">Last Name</label>
+					<input type="text" class="form-control form-control-lg" id="lastname" placeholder="name">
+				</div>
+				<div class="form-group">
+					<label for="email">Email</label>
+					<input type="email" class="form-control form-control-lg" id="email" placeholder="email address">
+				</div>
+				<div class="form-group">
+					<label for="contact">Contact Number</label>
+					<input type="phone" class="form-control form-control-lg md-form" id="contact" placeholder="contact number">
+				</div>
+				<div class="form-group">
+					<label for="pwd">Password</label>
+					<input type="password" class="form-control form-control-lg" id="pwd" placeholder="at least 6 characters">
+				</div>
+				<div class="form-group">
+					<label for="confirmpwd">Confirm Password</label>
+					<input type="password" class="form-control form-control-lg" id="confirmpwd" placeholder="at least 6 characters">
+				</div>
+				<div class="checkbox">
+					<label><input type="checkbox" class="px-5">      I agree to the Terms &amp; Conditions and Privacy Policy</label>
+				</div>
+				<button type="submit" class="btn btn-primary btn-info btn-lg">REGISTER</button>
+			</form> 
+		</div>
+	  </div>
+
+
+	  <div id="menu1" class="card menu1">
+		<h3 class="card-header white-text py-4 bg-info">SIGN IN</h3>
+		
+		<div class="card-body px-lg-5 pt-0">
+			<form action="/action_page.php" class="py-4">
+				<div class="form-group">
+				<label for="email">Email</label>
+				<input type="email" class="form-control form-control-lg" id="email" placeholder="email address">
+				</div>
+				<div class="form-group">
+						<label for="pwd">Password</label>
+						<input type="password" class="form-control form-control-lg" id="pwd" placeholder="at least 6 characters">
+				</div>
+				<p class="lead">Forgot password</p>
+				<button type="submit" class="btn btn-primary btn-info btn-lg">SIGN IN</button>
+			</form> 
+		  </div>
+	  </div>
+	</div>
+</div>
+
+
+
+
+
+<script>
+
+	const signinButton = document.getElementById('signinbutton')
+	const registerButton = document.getElementById('registerbutton')
+	const menu1 = document.getElementById('menu1');
+	const menu2 = document.getElementById('menu2');
+	const content = document.getElementById('content')
+
+	signinButton.addEventListener('click', (e) => {
+		if (menu1.style.display === 'none') {
+			menu1.style.display = 'block'
+			menu2.style.display = 'none'
+		} else {
+			menu2.style.display = 'none'
+			
+		}
+	})
+
+	registerButton.addEventListener('click', (e) => {
+		if (menu2.style.display === 'none') {
+			menu2.style.display = 'block'
+			menu1.style.display = 'none'
+		} else {
+			menu1.style.display = 'none'
+		}
+	})
+
+	const x = window.matchMedia("(max-width: 767px)");
+	
+	const buttons = document.getElementsByClassName('buttons')
+	 const siginHandler = () => {
+		if (menu1.style.display === 'none') {
+			menu1.style.display = 'block'
+			menu2.style.display = 'none'
+		} else {
+			menu2.style.display = 'none'
+			
+		}
+	}
+
+	const	registerHandler = () => {
+		if (menu2.style.display === 'none') {
+			menu2.style.display = 'block'
+			menu1.style.display = 'none'
+		} else {
+			menu1.style.display = 'none'
+		}
+	}
+
+	const removeTab = (x) => {	
+		if (x.matches) { // If media query matches
+			signinButton.addEventListener('click', siginHandler)
+			registerButton.addEventListener('click', registerHandler)			
+			content.classList.remove('content-tab');		
+		} else {
+			buttons.style.display = 'none'
+			signinButton.removeEventListener('click', siginHandler)
+			registerButton.removeEventListener('click', registerHandler)
+			content.classList.add('content-tab');
+			// menu1.classList.add('menu1');
+			// menu2.classList.add('menu2');
+
+			}
+	}
+
+
+
+// removeTab(x) // Call listener function at run time
+// x.addListener(removeTab) // Attach listener function on state changes 
+	// const x = window.matchMedia("(max-width: 767px)")
+</script>
+<script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

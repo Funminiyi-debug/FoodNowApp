@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Location</title>
+    <style>
+    body {
+        box-sizing: content-box;
+        padding: 0;
+        margin: 0;
+    }
+    .google-maps {
+        position: relative;
+        padding-bottom: 75%; 
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        margin-top: 4rem
+    }
+    .google-maps iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        overflow-wrap: inherit
+    }
+
+    .search-bar {
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+			/* grid-column: 4/12; */
+			margin: 0 !important;
+            position: absolute; 
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 11;
+		}
+
+		 .input {
+			grid-column: 1/8;
+			border-radius: 0;
+		}
+
+		.button {
+			grid-column: 8/13
+			
+		}
+
+        @media(max-width: 767px){
+            .search-bar {
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+			grid-template-rows: auto;
+			grid-column: 3/12;
+		}
+
+		 .input {
+			grid-column: 1/12;
+            font-size: 1rem;
+		}
+
+		.button {
+			grid-column: 1/12;
+            font-size: 1rem;
+		}
+        }
+
+    </style>
+</head>
+<body>
+        <div class="header">
+			
+                <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top navbar-info">
+                    <a href="index.html" class="navbar-brand text-info">FoodNowApp</a>
+    
+                    <button class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="signin.html" class="nav-link active text-info">SIGN IN</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="signin.html" class="nav-link text-info">REGISTER</a>
+                        </li>
+                    </ul>
+                </div>
+                </nav>
+    
+            </div>
+
+            <form class="search-bar row">	
+					
+					<input type="text" class=" input form-control form-control-lg" id="inputPassword2" placeholder="Enter Street or Address">
+							
+					<a href="./map.html" class="button btn btn-lg btn-info">Find Restaurant</a>
+					
+			</form>	
+<div class="google-maps">
+     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194491.88184617035!2d3.1800829815967275!3d6.541659740981275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2ae68280c1%3A0xdc9e87a367c3d9cb!2sLagos!5e0!3m2!1sen!2sng!4v1567166463927!5m2!1sen!2sng" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+</div>
+<script>
+   
+   const createMap = () => {
+    const propertiesOfMap = {
+
+    }
+   }         
+</script>
+<script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        
+</body>
+</html>

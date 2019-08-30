@@ -1,0 +1,150 @@
+		* {
+			font-size: 16px;
+		}
+
+
+		body {
+			box-sizing: border-box;
+			padding: 0;
+			margin: 0 !important;
+			display: grid;
+			grid-template-areas: 
+						"header"
+						"bg-img"
+						"footer"
+						;
+		}
+
+
+
+		.bg-img {
+			background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(img/coverimg.jpg) no-repeat;
+			background-size: cover;
+			grid-area: "bg-img";			
+			background-color: blue;
+			height: 100vh;
+			width: 100vw;
+			color: white !important;
+		}
+
+		.header {
+			grid-area: "header"
+		}
+
+		.cover-tale {
+			margin-top: 15%;
+		}
+		
+		/*============= FOR THE INPUT AND BUTTON ELEMENT*/
+		.search-bar {
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+			grid-column: 4/12;
+			margin: 0 !important;
+
+		}
+
+		 .input {
+			grid-column: 1/8;
+			border-radius: 0;
+		}
+
+		.button {
+			grid-column: 8/13
+			
+		}
+
+		/* ============== END OF INPUT ELEMENT*/
+		.inside {
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+			grid-template-rows: auto; 
+			align-items: center;
+			justify-content: center;
+			grid-gap: 10px;
+		}
+
+		.inside > * {
+			grid-column: 3/11;
+		} 
+
+		.app-links {
+			display: grid;
+			grid-template-rows: 1fr;
+			/*grid-template-columns: repeat(2, 1fr);*/
+			grid-gap: 10px;
+			align-items: space-between;
+
+		}
+		/*====================== THE FOOTER SECTION*/
+
+		#footer{
+			grid-area: "footer";
+
+		}
+
+		.footer-inside {
+			display: grid;
+			grid-template-rows: repeat(5, 1fr);
+			grid-template-columns: repeat(1, 1fr);
+			align-items: center;
+			justify-content: center;
+			width: 70%;
+			margin: auto;
+		}
+
+
+
+		.contact, .app-links, .social-media {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: flex-start;
+			justify-content: center;
+			padding:5px
+		}
+
+		.contact *, .app-links *, .social-media * {
+				margin: 5px;
+			}
+			
+		.jumbotron {
+			margin: 0
+		}
+
+
+ /*=============Media Queries=================*/
+@media(max-width: 767px){
+			.cover-tale {
+			margin-top: 25%;
+		}
+
+			.cover-tale h1 {
+			font-size: 2rem !important;
+			}
+
+		   .cover-tale p{
+			font-size: 1rem !important;
+			}
+		
+		.search-bar {
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+			grid-template-rows: auto;
+			grid-column: 3/12;
+		}
+
+		 .input {
+			grid-column: 1/12
+		}
+
+		.button {
+			grid-column: 1/12
+		}
+		
+		.app-links {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		
+}
