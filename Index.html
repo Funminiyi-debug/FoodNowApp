@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<title>FoodNow</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Manjari&display=swap" rel="stylesheet"> 
+
+	<style type="text/css">
+		* {
+			font-size: 16px;
+		}
+
+
+		body {
+			box-sizing: border-box;
+			padding: 0;
+			margin: 0 !important;
+			display: grid;
+			grid-template-areas: 
+						"header"
+						"bg-img"
+						"footer"
+						;
+		}
+		.navbar {
+			/* background-color: rgba(0,0,0,0.4) !important; */
+			font-weight: bolder;
+			/* color: white !important; */
+
+		}
+
+
+		.bg-img {
+			background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(./coverimg.jpg) no-repeat;
+			background-size: cover;
+			grid-area: "bg-img";			
+			/*background-color: blue;*/
+			height: 100%;
+			width: 100vw;
+			color: white !important;
+			padding-bottom: 10rem;
+		}
+
+		.header {
+			grid-area: "header"
+		}
+
+		.cover-tale {
+			margin-top: 15%;
+		}
+		
+		/*============= FOR THE INPUT AND BUTTON ELEMENT*/
+		.search-bar {
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+			grid-column: 4/12;
+			margin: 0 !important;
+
+		}
+
+		 .input {
+			grid-column: 1/8;
+			border-radius: 0;
+		}
+
+		.button {
+			grid-column: 8/13
+			
+		}
+
+		/* ============== END OF INPUT ELEMENT*/
+		.inside {
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+			grid-template-rows: auto; 
+			align-items: center;
+			justify-content: center;
+			grid-gap: 10px;
+			font-family: 'Manjari', sans-serif;
+		}
+
+		.inside > * {
+			grid-column: 3/11;
+		} 
+
+		.app-links {
+			display: grid;
+			grid-template-rows: 1fr;
+			/*grid-template-columns: repeat(2, 1fr);*/
+			grid-gap: 10px;
+			align-items: space-between;
+
+		}
+		/*====================== THE FOOTER SECTION*/
+
+		#footer{
+			grid-area: "footer";
+
+		}
+
+		.footer-inside {
+			display: grid;
+			grid-template-rows: repeat(5, 1fr);
+			grid-template-columns: repeat(1, 1fr);
+			align-items: center;
+			justify-content: center;
+			width: 70%;
+			margin: auto;
+		}
+
+
+
+		.contact, .app-links, .social-media {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: flex-start;
+			justify-content: center;
+			padding:5px
+		}
+
+		.contact *, .app-links *, .social-media * {
+				margin: 5px;
+			}
+			
+		.jumbotron {
+			margin: 0
+		}
+
+
+		/* ============= STYLE THE FONTS */
+		.svg-inline--fa {
+		
+		}
+
+ /*=============Media Queries=================*/
+@media(max-width: 767px){
+			.cover-tale {
+			margin-top: 25%;
+		}
+
+			.cover-tale h1 {
+			font-size: 1.5rem !important;
+			}
+
+		   .cover-tale p{
+			font-size: 1rem !important;
+			}
+		
+		.search-bar {
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+			grid-template-rows: auto;
+			grid-column: 3/12;
+		}
+
+		 .input {
+			grid-column: 1/12
+		}
+
+		.button {
+			grid-column: 1/12
+		}
+
+		
+}
+
+	</style>
+
+</head>
+<body>
+	
+
+	<div class="header">
+			
+			<nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top navbar-info">
+				<a href="#" class="navbar-brand text-info">FoodNowApp</a>
+
+				<button class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a href="signin.html" class="nav-link text-info">SIGN IN</a>
+					</li>
+					<li class="nav-item">
+						<a href="signin.html" class="nav-link text-info">REGISTER</a>
+					</li>
+				</ul>
+			</div>
+			</nav>
+
+		</div>
+
+
+	<div class="bg-img">		
+
+		<div class="cover-tale">
+			<div class="inside">
+				
+						
+				<h1 class="text-center">Tasty Food available at your disposal immediately</h1>
+				<p class="lead text-center">Order your food with us and get delivery at your doorstep in less than 10 minutes</p>
+				
+
+			
+						
+				<form class="search-bar">	
+					
+					<input type="text" class=" input form-control form-control-lg" id="inputPassword2" placeholder="Enter Street or Address">
+							
+					<a href="./map.html" class="button btn btn-lg btn-info">Find Restaurant</a>
+					
+				</form>			
+				
+				<div class="app-links">
+					<img src="img/google-play-badge(1).png" alt="google play logo">
+					<img src="img/app-store-badge.png" alt="app store logo">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer">
+		<div class="jumbotron jumbotron-fluid">
+			
+				
+					<div class=" text-center footer-inside">	
+						<div class="contact">
+							<p class="lead"><i class="fas fa-envelope-square fa-sm text-info"></i> customerservice@FoodNowApp.now</p>
+							
+							<p class="lead"><i class="fas fa-phone fa-sm text-info"></i> 08134696399</p>
+						</div>
+
+						<div class="app-links">
+							<a href="#" class="btn btn-success">SIGN UP COMPANY</a>
+							<img src="img/google-play-badge(1).png" alt="googleplaylogo">
+							<img src="img/app-store-badge.png" alt="app store logo">
+							<a href="#" class="btn btn-danger">JOIN OUR TEAM</a>
+						</div>
+
+						<div class="social-media">
+							<i class="fab fa-facebook fa-2x text-info"></i> <i class="fab fa-instagram fa-2x text-info"></i> <i class="fab fa-twitter fa-2x text-info"></i>  
+						</div>
+
+						<p class="lead text-center">&copy; Copyright FoodNowApp Ltd. All rights reserved</p>
+				</div>
+			
+		
+	</div>
+
+  	</div>
+
+
+
+
+
+<script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
